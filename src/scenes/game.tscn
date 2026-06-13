@@ -8,6 +8,9 @@ vertices = PackedVector2Array(1138, 11.9765625, 1138, 637, 8.0234375, 637, 8.976
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-1, 0, -2, 647, 1148, 647, 1148, 2)])
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yqjtg"]
+size = Vector2(1359, 847)
+
 [node name="Game" type="Node2D" unique_id=333779855]
 script = ExtResource("1_uwrxv")
 
@@ -16,3 +19,9 @@ position = Vector2(85, 56)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1800254639]
 navigation_polygon = SubResource("NavigationPolygon_yqjtg")
+
+[node name="Game Boundary" type="Area2D" parent="." unique_id=1658393003 groups=["game_boundary"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Game Boundary" unique_id=1352259913]
+position = Vector2(583.5, 326.5)
+shape = SubResource("RectangleShape2D_yqjtg")

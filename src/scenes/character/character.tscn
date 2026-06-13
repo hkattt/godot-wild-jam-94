@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://6c8cgv6sf860"]
 
 [ext_resource type="Script" uid="uid://qqrkrcp8jb3" path="res://scenes/character/character.gd" id="1_6nn2t"]
+[ext_resource type="PackedScene" uid="uid://cbq6qn2crmnhu" path="res://scenes/gun/gun.tscn" id="2_cuyo6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nxwtt"]
 
@@ -13,3 +14,5 @@ polygon = PackedVector2Array(-10, -10, 10, -10, 10, 10, -10, 10)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=905806575]
 shape = SubResource("RectangleShape2D_nxwtt")
+
+[node name="Gun" parent="." unique_id=870551047 instance=ExtResource("2_cuyo6")]
