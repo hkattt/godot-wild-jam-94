@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://b5u2vory12qm3"]
+
+[ext_resource type="PackedScene" uid="uid://6c8cgv6sf860" path="res://scenes/character/character.tscn" id="1_vr16s"]
+[ext_resource type="Script" uid="uid://7eh6lnbyjel8" path="res://scenes/game_arena/game_arena.gd" id="1_y284u"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_vr16s"]
+vertices = PackedVector2Array(630, 710, 10, 710, 10, 10, 630, 10)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(0, 0, 0, 720, 640, 720, 640, 0)])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y284u"]
+size = Vector2(640, 720)
+
+[node name="GameArena" type="Node2D" unique_id=496630411]
+script = ExtResource("1_y284u")
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=871102944]
+color = Color(0.5602393, 0.5563618, 0, 1)
+polygon = PackedVector2Array(0, 0, 640, 0, 640, 720, 0, 720)
+
+[node name="Character" parent="." unique_id=1331352431 instance=ExtResource("1_vr16s")]
+position = Vector2(353, 245)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1016527832]
+navigation_polygon = SubResource("NavigationPolygon_vr16s")
+
+[node name="Game Boundary" type="Area2D" parent="." unique_id=1303804936 groups=["game_boundary"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Game Boundary" unique_id=1274087126]
+position = Vector2(320, 360)
+shape = SubResource("RectangleShape2D_y284u")

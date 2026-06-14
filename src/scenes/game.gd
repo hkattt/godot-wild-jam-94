@@ -1,11 +1,9 @@
-class_name Game extends Node2D
+class_name Game extends Node
 
-@onready var character: Character = $Character
-@onready var label: Label = $Label
+@onready var fps_label: Label = $GameUI/HBoxContainer/RightPanel/VBoxContainer/FPS
 
 func _ready() -> void:
-	var spawner: Spawner = Spawner.create(character, 5, 1, 5)
-	add_child(spawner)
+	pass
 
 func _process(_delta: float) -> void:
-	label.text = "FPS: {fps}".format({"fps": Engine.get_frames_per_second()})
+	fps_label.text = "FPS: {fps}".format({"fps": Engine.get_frames_per_second()})
