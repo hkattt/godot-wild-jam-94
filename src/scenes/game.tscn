@@ -1,31 +1,77 @@
 [gd_scene format=3 uid="uid://gaglwg4p0i6"]
 
 [ext_resource type="Script" uid="uid://bbsjwprg5qa4s" path="res://scenes/game.gd" id="1_uwrxv"]
-[ext_resource type="PackedScene" uid="uid://6c8cgv6sf860" path="res://scenes/character/character.tscn" id="2_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://b5u2vory12qm3" path="res://scenes/game_arena/game_arena.tscn" id="2_yqjtg"]
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_yqjtg"]
-vertices = PackedVector2Array(1138, 11.9765625, 1138, 637, 8.0234375, 637, 8.9765625, 10.0078125)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-1, 0, -2, 647, 1148, 647, 1148, 2)])
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yqjtg"]
-size = Vector2(1359, 847)
-
-[node name="Game" type="Node2D" unique_id=333779855]
+[node name="Game" type="Node" unique_id=1717956550]
 script = ExtResource("1_uwrxv")
 
-[node name="Character" parent="." unique_id=1331352431 instance=ExtResource("2_yqjtg")]
-position = Vector2(85, 56)
+[node name="GameArena" parent="." unique_id=496630411 instance=ExtResource("2_yqjtg")]
+position = Vector2(320, 0)
 
-[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1800254639]
-navigation_polygon = SubResource("NavigationPolygon_yqjtg")
+[node name="GameUI" type="Control" parent="." unique_id=188450023]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="Game Boundary" type="Area2D" parent="." unique_id=1658393003 groups=["game_boundary"]]
+[node name="HBoxContainer" type="HBoxContainer" parent="GameUI" unique_id=568278383]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Game Boundary" unique_id=1352259913]
-position = Vector2(583.5, 326.5)
-shape = SubResource("RectangleShape2D_yqjtg")
+[node name="LeftPanel" type="MarginContainer" parent="GameUI/HBoxContainer" unique_id=1204967929]
+custom_minimum_size = Vector2(320, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
 
-[node name="Label" type="Label" parent="." unique_id=105346954]
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="VBoxContainer" type="VBoxContainer" parent="GameUI/HBoxContainer/LeftPanel" unique_id=1915393692]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="GameUI/HBoxContainer/LeftPanel/VBoxContainer" unique_id=251861267]
+layout_mode = 2
+text = "Hello World 1"
+
+[node name="CentrePanel" type="MarginContainer" parent="GameUI/HBoxContainer" unique_id=1110098487]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameUI/HBoxContainer/CentrePanel" unique_id=1455294964]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Title" type="Label" parent="GameUI/HBoxContainer/CentrePanel/VBoxContainer" unique_id=376172792]
+layout_mode = 2
+theme_override_font_sizes/font_size = 46
+text = "Game Title"
+horizontal_alignment = 1
+
+[node name="RightPanel" type="MarginContainer" parent="GameUI/HBoxContainer" unique_id=466175453]
+custom_minimum_size = Vector2(320, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameUI/HBoxContainer/RightPanel" unique_id=1055672079]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="FPS" type="Label" parent="GameUI/HBoxContainer/RightPanel/VBoxContainer" unique_id=1247263956]
+layout_mode = 2
+text = "FPS:"

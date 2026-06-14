@@ -13,7 +13,12 @@ config_version=5
 config/name="godot-wild-jam-94"
 run/main_scene="uid://gaglwg4p0i6"
 config/features=PackedStringArray("4.6", "GL Compatibility")
-config/icon="res://assets/icon.svg"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="canvas_items"
 
 [global_group]
 
@@ -21,6 +26,11 @@ game_boundary=""
 bullets=""
 hit_boxes=""
 hurt_boxes=""
+
+[gui]
+
+theme/custom="uid://btdnqwc4xmwiy"
+theme/custom_font="uid://cffk7rtupu428"
 
 [input]
 
