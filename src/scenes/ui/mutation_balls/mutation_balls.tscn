@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://d31ynkkcmyoof"]
+
+[ext_resource type="Script" uid="uid://do6mah1fwjalt" path="res://scenes/ui/mutation_balls/mutation_balls.gd" id="1_kl675"]
+
+[node name="MutationBalls" type="HBoxContainer" unique_id=1742642088]
+custom_minimum_size = Vector2(35, 10)
+offset_right = 100.0
+offset_bottom = 8.0
+script = ExtResource("1_kl675")

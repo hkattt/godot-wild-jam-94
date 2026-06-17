@@ -1,7 +1,5 @@
 class_name Bullet extends Area2D
 
-var body: Area2D
-
 func _ready() -> void:
 	self.area_exited.connect(_on_area_exited)
 	add_to_group("bullets", true)
