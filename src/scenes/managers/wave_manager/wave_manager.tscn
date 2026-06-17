@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bpvhuxpf1crr8"]
+
+[ext_resource type="Script" uid="uid://c8waq6513govw" path="res://scenes/managers/wave_manager/wave_manager.gd" id="1_7xm20"]
+
+[node name="WaveManager" type="Node2D" unique_id=1395098033]
+script = ExtResource("1_7xm20")
+
+[node name="Timer" type="Timer" parent="." unique_id=1758314905]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
