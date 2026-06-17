@@ -25,8 +25,17 @@ func _ready() -> void:
 	randomize()
 	
 func _on_timer_timeout() -> void:
-	var vampire: Vampire = Vampire.create(target, Vector2(100, 100))
-	get_parent().add_child(vampire)
+	# TODO: Improve the random mutation generation
+	var random_mutations: Array[Enums.Mutation] = []
+	var enum_values = Enums.Mutation.values()
+	var array_size: int = randi_range(0, 3)
+	for i in range(array_size):
+		var random_index = randi() % enum_values.size()
+		var random_mutation = enum_values[randi() % enum_values.size()]
+		random_mutations.append(random_mutation)
+	
+	var rhinovirus: Rhinovirus = Rhinovirus.create(target, Vector2(100, 100), random_mutations)
+	get_parent().add_child(rhinovirus)
 	enemy_count += 1
 	if (enemy_count < number_of_enemies):
 		var delay = randf_range(spawn_time_min, spawn_time_max)

@@ -12,7 +12,7 @@ func _ready() -> void:
 
 func take_damage(damage: float):
 	health = max(health - damage, 0.0)
-	
+		
 	took_damage.emit()	
 
 	if health == 0.0:

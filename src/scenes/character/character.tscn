@@ -22,6 +22,5 @@ shape = SubResource("RectangleShape2D_nxwtt")
 [node name="Health" parent="." unique_id=1988655922 instance=ExtResource("3_fgi2k")]
 health = 100.0
 
-[node name="HitBox" parent="." unique_id=792065303 node_paths=PackedStringArray("health") instance=ExtResource("4_f8hpl")]
-health = NodePath("../Health")
+[node name="HitBox" parent="." unique_id=792065303 instance=ExtResource("4_f8hpl")]
 box_size = Vector2(20, 20)

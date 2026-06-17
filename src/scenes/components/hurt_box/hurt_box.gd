@@ -14,7 +14,5 @@ func _ready() -> void:
 func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("hit_boxes"):
 		var hit_box: HitBox = area as HitBox
-		var entity: Enums.Entity = hit_box.entity
-		var damage: float = DamageMatrix.get_damage(damage_source, entity)
-		hit_box.take_damage(damage)
+		hit_box.handle_damage_event(damage_source)
 		dealt_damage.emit()
