@@ -19,3 +19,8 @@ enum Mutation {
 	BLUE,
 	GREEN
 }
+
+enum BulletPattern {
+	SINGLE,
+	BURST
+}

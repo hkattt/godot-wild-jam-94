@@ -1,3 +1,22 @@
 [gd_scene format=3 uid="uid://ssfdwpnar7ji"]
 
+[ext_resource type="Script" uid="uid://ccqvo0pvne21c" path="res://scenes/options/options.gd" id="1_ac427"]
+
 [node name="Options" type="Node2D" unique_id=971355583]
+script = ExtResource("1_ac427")
+
+[node name="Button_manager" type="Control" parent="." unique_id=1740849077]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button" type="Button" parent="Button_manager" unique_id=1957780537]
+layout_mode = 0
+offset_left = 537.0
+offset_top = 504.0
+offset_right = 747.0
+offset_bottom = 557.0
+text = "Back"
+
+[connection signal="pressed" from="Button_manager/Button" to="." method="_on_button_pressed"]

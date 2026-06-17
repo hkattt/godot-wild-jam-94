@@ -14,5 +14,6 @@ func _ready() -> void:
 func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("hit_boxes"):
 		var hit_box: HitBox = area as HitBox
-		hit_box.handle_damage_event(damage_source)
-		dealt_damage.emit()
+		if hit_box:
+			hit_box.handle_damage_event(damage_source)
+			dealt_damage.emit()
