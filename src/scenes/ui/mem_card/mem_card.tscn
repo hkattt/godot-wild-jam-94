@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://dqimpym3tnjpn"]
+
+[ext_resource type="Texture2D" uid="uid://0nvpb2cohhwd" path="res://assets/ui/mem_card/mem-card-slot.png" id="1_6bpr1"]
+[ext_resource type="Texture2D" uid="uid://enhl2rwhu38i" path="res://assets/ui/mem_cells/mem-cell-triangle-locked.png" id="2_p0hsu"]
+[ext_resource type="Texture2D" uid="uid://dk3tnvsdkb7u7" path="res://assets/ui/mem_cells/mem-cell-diamond-locked.png" id="3_mma3t"]
+[ext_resource type="Texture2D" uid="uid://ifw5bevd210t" path="res://assets/ui/mem_cells/mem-cell-rect-locked.png" id="4_fb2kb"]
+[ext_resource type="Texture2D" uid="uid://deptq0lj1axoa" path="res://assets/ui/mem_cells/mem-cell-star-locked.png" id="5_gtypp"]
+
+[node name="MemCard" type="Control" unique_id=194550809]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 275.0
+offset_bottom = 275.0
+
+[node name="Background" type="TextureRect" parent="." unique_id=507582790]
+layout_mode = 1
+offset_right = 267.0
+offset_bottom = 280.0
+texture = ExtResource("1_6bpr1")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1382511278]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 60
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="Content" type="VBoxContainer" parent="MarginContainer" unique_id=510419482]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 25
+
+[node name="TopRow" type="HBoxContainer" parent="MarginContainer/Content" unique_id=855308777]
+layout_mode = 2
+theme_override_constants/separation = 35
+
+[node name="TriangleLocked" type="TextureRect" parent="MarginContainer/Content/TopRow" unique_id=846555701]
+layout_mode = 2
+texture = ExtResource("2_p0hsu")
+
+[node name="DiamondLocked" type="TextureRect" parent="MarginContainer/Content/TopRow" unique_id=1078310892]
+layout_mode = 2
+texture = ExtResource("3_mma3t")
+
+[node name="BottomRow" type="HBoxContainer" parent="MarginContainer/Content" unique_id=771735639]
+layout_mode = 2
+theme_override_constants/separation = 35
+
+[node name="RectangleLocked" type="TextureRect" parent="MarginContainer/Content/BottomRow" unique_id=1605602808]
+layout_mode = 2
+texture = ExtResource("4_fb2kb")
+
+[node name="StarLocked" type="TextureRect" parent="MarginContainer/Content/BottomRow" unique_id=1500289235]
+layout_mode = 2
+texture = ExtResource("5_gtypp")

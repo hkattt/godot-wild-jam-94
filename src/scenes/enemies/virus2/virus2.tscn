@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://b17ay6280l8mh"]
+
+[ext_resource type="Script" uid="uid://cmehpf5gj53v3" path="res://scenes/enemies/virus2/virus2.gd" id="1_rvadv"]
+[ext_resource type="PackedScene" uid="uid://d31ynkkcmyoof" path="res://scenes/ui/mutation_balls/mutation_balls.tscn" id="2_ycofm"]
+[ext_resource type="PackedScene" uid="uid://lfkuhfcvykrv" path="res://scenes/ui/health_bar/health_bar.tscn" id="3_357dt"]
+[ext_resource type="Texture2D" uid="uid://pmwr3l7ayey1" path="res://assets/viruses/virus-2-1.png" id="4_rvadv"]
+[ext_resource type="Texture2D" uid="uid://hsgpu4mf46gv" path="res://assets/viruses/virus-2-2.png" id="5_yjfjo"]
+[ext_resource type="PackedScene" uid="uid://o63rvg4a6cnn" path="res://scenes/components/health/health.tscn" id="6_v7jpb"]
+[ext_resource type="PackedScene" uid="uid://bad8vdun64cjm" path="res://scenes/components/hit_box/hit_box.tscn" id="7_xn24k"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qchha"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_rvadv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_yjfjo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vwim3"]
+size = Vector2(30, 70)
+
+[node name="Virus2" type="CharacterBody2D" unique_id=666452032]
+script = ExtResource("1_rvadv")
+
+[node name="UI" type="VBoxContainer" parent="." unique_id=1797301359]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -17.5
+offset_top = -80.0
+offset_right = 17.5
+offset_bottom = -56.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="MutationBalls" parent="UI" unique_id=1742642088 instance=ExtResource("2_ycofm")]
+layout_mode = 2
+
+[node name="HealthBar" parent="UI" unique_id=1671427461 node_paths=PackedStringArray("health") instance=ExtResource("3_357dt")]
+layout_mode = 2
+health = NodePath("../../Health")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=869744447]
+sprite_frames = SubResource("SpriteFrames_qchha")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1963569828]
+shape = SubResource("RectangleShape2D_vwim3")
+
+[node name="Health" parent="." unique_id=1988655922 instance=ExtResource("6_v7jpb")]
+health = 100.0
+
+[node name="HitBox" parent="." unique_id=792065303 instance=ExtResource("7_xn24k")]
+box_size = Vector2(30, 70)

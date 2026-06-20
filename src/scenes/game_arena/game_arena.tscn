@@ -5,20 +5,23 @@
 [ext_resource type="PackedScene" uid="uid://bpvhuxpf1crr8" path="res://scenes/managers/wave_manager/wave_manager.tscn" id="3_h8ngd"]
 [ext_resource type="PackedScene" uid="uid://bjbt6nc6wv8ca" path="res://scenes/spawner/spawner.tscn" id="4_3dy58"]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3dy58"]
+load_path = "res://.godot/imported/game-arena.png-3465dd3028eea54a7e25ca4f9aa2d670.ctex"
+
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_vr16s"]
-vertices = PackedVector2Array(630, 710, 10, 710, 10, 10, 630, 10)
+vertices = PackedVector2Array(656, 710.97656, 10, 710.0078, 10, 10, 656, 10)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(0, 0, 0, 720, 640, 720, 640, 0)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(0, 0, 0, 720, 666, 721, 666, 0)])
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y284u"]
-size = Vector2(640, 720)
+size = Vector2(644, 719)
 
 [node name="GameArena" type="Node2D" unique_id=496630411]
 script = ExtResource("1_y284u")
 
-[node name="Polygon2D" type="Polygon2D" parent="." unique_id=871102944]
-color = Color(0.5602393, 0.5563618, 0, 1)
-polygon = PackedVector2Array(0, 0, 640, 0, 640, 720, 0, 720)
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1627111680]
+position = Vector2(335, 361)
+texture = SubResource("CompressedTexture2D_3dy58")
 
 [node name="Character" parent="." unique_id=1331352431 instance=ExtResource("1_vr16s")]
 position = Vector2(353, 245)
@@ -49,5 +52,5 @@ wave_manager = NodePath("../WaveManager")
 [node name="Game Boundary" type="Area2D" parent="." unique_id=1303804936 groups=["game_boundary"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Game Boundary" unique_id=1274087126]
-position = Vector2(320, 360)
+position = Vector2(334, 360.5)
 shape = SubResource("RectangleShape2D_y284u")

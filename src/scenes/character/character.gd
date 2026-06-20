@@ -1,14 +1,14 @@
 class_name Character extends CharacterBody2D
 
 const MAX_SPEED: float = 250.0
-#const ACCELERATION: float = 300.0
+
+@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var gun = $Gun
 
 var direction: Vector2 = Vector2.ZERO
-#var current_velocity: Vector2 = Vector2.ZERO
-#var target_velocity: Vector2 = Vector2.ZERO
 
 func _ready() -> void:
-	pass
+	animated_sprite.play("default")
 	
 func _physics_process(delta: float) -> void:
 	direction = Vector2(
@@ -16,12 +16,8 @@ func _physics_process(delta: float) -> void:
 		int(Input.is_action_pressed("move_down")) - int(Input.is_action_pressed("move_up"))
 	).normalized()
 	
-	#if (direction.length() == 0):
-		#target_velocity = Vector2.ZERO
-	#else:
-		#target_velocity = MAX_SPEED * direction
-		#
-	#current_velocity =current_velocity.move_toward(target_velocity, ACCELERATION * delta)
-	
-	velocity = direction*MAX_SPEED
+	velocity = direction * MAX_SPEED
 	move_and_slide()
+
+func get_gun() -> Gun:
+	return gun

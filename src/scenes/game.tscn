@@ -2,9 +2,16 @@
 
 [ext_resource type="Script" uid="uid://bbsjwprg5qa4s" path="res://scenes/game.gd" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://b5u2vory12qm3" path="res://scenes/game_arena/game_arena.tscn" id="2_yqjtg"]
+[ext_resource type="Texture2D" uid="uid://8t4ca3ggynm1" path="res://assets/ui/background/background.png" id="3_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://dqimpym3tnjpn" path="res://scenes/ui/mem_card/mem_card.tscn" id="4_iywne"]
+[ext_resource type="PackedScene" uid="uid://dqigngtfxc7dd" path="res://scenes/ui/stat_card/StatCard.tscn" id="5_iywne"]
 
 [node name="Game" type="Node" unique_id=1717956550]
 script = ExtResource("1_uwrxv")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=824967135]
+position = Vector2(640, 360)
+texture = ExtResource("3_lnu2h")
 
 [node name="GameArena" parent="." unique_id=496630411 instance=ExtResource("2_yqjtg")]
 position = Vector2(320, 0)
@@ -27,7 +34,7 @@ grow_vertical = 2
 theme_override_constants/separation = 0
 
 [node name="LeftPanel" type="MarginContainer" parent="GameUI/HBoxContainer" unique_id=1204967929]
-custom_minimum_size = Vector2(320, 0)
+custom_minimum_size = Vector2(305, 0)
 layout_mode = 2
 theme_override_constants/margin_left = 12
 theme_override_constants/margin_top = 12
@@ -38,9 +45,9 @@ theme_override_constants/margin_bottom = 12
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="GameUI/HBoxContainer/LeftPanel/VBoxContainer" unique_id=251861267]
+[node name="MemCard" parent="GameUI/HBoxContainer/LeftPanel/VBoxContainer" unique_id=194550809 instance=ExtResource("4_iywne")]
 layout_mode = 2
-text = "Hello World 1"
+size_flags_vertical = 3
 
 [node name="CentrePanel" type="MarginContainer" parent="GameUI/HBoxContainer" unique_id=1110098487]
 layout_mode = 2
@@ -61,7 +68,7 @@ text = "Game Title"
 horizontal_alignment = 1
 
 [node name="RightPanel" type="MarginContainer" parent="GameUI/HBoxContainer" unique_id=466175453]
-custom_minimum_size = Vector2(320, 0)
+custom_minimum_size = Vector2(305, 0)
 layout_mode = 2
 theme_override_constants/margin_left = 12
 theme_override_constants/margin_top = 12
@@ -72,6 +79,6 @@ theme_override_constants/margin_bottom = 12
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="FPS" type="Label" parent="GameUI/HBoxContainer/RightPanel/VBoxContainer" unique_id=1247263956]
+[node name="StatCard" parent="GameUI/HBoxContainer/RightPanel/VBoxContainer" unique_id=2046510531 node_paths=PackedStringArray("game_arena") instance=ExtResource("5_iywne")]
 layout_mode = 2
-text = "FPS:"
+game_arena = NodePath("../../../../../GameArena")

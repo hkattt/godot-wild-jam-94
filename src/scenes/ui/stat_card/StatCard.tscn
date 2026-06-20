@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://dqigngtfxc7dd"]
+
+[ext_resource type="Texture2D" uid="uid://cwpxhim2n4s7j" path="res://assets/ui/stat_card/stat-card.png" id="1_nsvv8"]
+[ext_resource type="Script" uid="uid://cnjk8cu6s2cn3" path="res://scenes/ui/stat_card/stat_card.gd" id="1_nvasv"]
+
+[node name="StatCard" type="Control" unique_id=2046510531]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nvasv")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=793702390]
+layout_mode = 0
+offset_right = 279.0
+offset_bottom = 388.0
+texture = ExtResource("1_nsvv8")
+
+[node name="Content" type="MarginContainer" parent="." unique_id=1672817495]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 60
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Content" unique_id=1462635771]
+layout_mode = 2
+
+[node name="FPS" type="Label" parent="Content/VBoxContainer" unique_id=1423031433]
+layout_mode = 2
+text = "FPS:"
+
+[node name="CurrentWave" type="Label" parent="Content/VBoxContainer" unique_id=1356138446]
+layout_mode = 2
+text = "Current Wave:"

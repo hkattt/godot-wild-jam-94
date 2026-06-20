@@ -1,10 +1,6 @@
 class_name Gun extends Node2D
 
-var memory_cells: Array[Enums.MemoryCell] = [
-	Enums.MemoryCell.WHITE, 
-	Enums.MemoryCell.RED,
-	Enums.MemoryCell.GREEN
-]
+var memory_cells: Array[Enums.MemoryCell] = [Enums.MemoryCell.WHITE]
 
 var current_memory_cell_idx := 0
 
@@ -15,6 +11,9 @@ var guns: Array[Enums.BulletPattern] = [
 
 var current_gun_idx := 0
 
+func _ready() -> void:
+	start_firing()
+
 func _input(event):
 	if event.is_action_pressed("swap_gun_left"):
 		current_memory_cell_idx = (current_memory_cell_idx + 1) % memory_cells.size()
@@ -22,6 +21,12 @@ func _input(event):
 		current_memory_cell_idx = (current_memory_cell_idx - 1) % memory_cells.size()
 	if event.is_action_pressed("swap_gun"):
 		current_gun_idx = (current_memory_cell_idx + 1) % memory_cells.size()
+
+func get_memory_cells() -> Array[Enums.MemoryCell]:
+	return memory_cells
+	
+func add_memory_cell(memory_cell: Enums.MemoryCell) -> void:
+	memory_cells.append(memory_cell)
 
 func create_bullet(memory_cell: Enums.MemoryCell, bullet_position: Vector2, direction: Vector2) -> Bullet:
 	match memory_cell:
@@ -49,10 +54,6 @@ func fire(memory_cell, pattern, num_bullets, delay) -> void:
 				if i < num_bullets -1:
 					await get_tree().create_timer(delay).timeout
 
-			
-func _ready() -> void:
-	start_firing()
-	
 func start_firing() -> void:
 	while true:
 		var current_memory_cell = memory_cells[current_memory_cell_idx]

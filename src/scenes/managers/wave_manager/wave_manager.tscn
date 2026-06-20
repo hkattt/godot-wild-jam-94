@@ -4,7 +4,3 @@
 
 [node name="WaveManager" type="Node2D" unique_id=1395098033]
 script = ExtResource("1_7xm20")
-
-[node name="Timer" type="Timer" parent="." unique_id=1758314905]
-
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
