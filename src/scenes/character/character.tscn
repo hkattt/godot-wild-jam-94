@@ -47,7 +47,7 @@ shape = SubResource("RectangleShape2D_nxwtt")
 [node name="Gun" parent="." unique_id=870551047 instance=ExtResource("2_cuyo6")]
 
 [node name="Health" parent="." unique_id=1988655922 instance=ExtResource("3_fgi2k")]
-health = 100.0
+health = 10.0
 
 [node name="HitBox" parent="." unique_id=792065303 instance=ExtResource("4_f8hpl")]
 box_size = Vector2(70, 70)

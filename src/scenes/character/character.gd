@@ -38,6 +38,7 @@ func get_gun() -> Gun:
 	return gun
 
 func _on_health_depleted() -> void:
+	SoundManager.play_sound(Enums.Sound.DEATH)
 	died.emit()
 
 func _on_hit_box_damage_taken(damage_source: Enums.DamageSource) -> void:
@@ -57,5 +58,4 @@ func shoot_animation() -> void:
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if animated_sprite.animation == "shoot":
-		print("here")
 		animated_sprite.play("default")

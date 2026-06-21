@@ -1,14 +1,14 @@
 # Godot Wild Jam 94
 
 ## Overview
-GAME_NAME was made using Godot 4.6.3 and GDScript for the [Godot Wild Jam 94](https://itch.io/jam/godot-wild-jam-94). The theme of the game jam was was `MUTATION`. The game jame also included the  following wildcards:
+Cell Wars was made using Godot 4.6.3 and GDScript for the [Godot Wild Jam 94](https://itch.io/jam/godot-wild-jam-94). The theme of the game jam was was `MUTATION`. The game jame also included the  following wildcards:
 - `Disassembly required`: Demolish, break, or otherwise disassemble things.
 - `Checkout`: Have stuff to buy in your game.
 - `I like turtles`: Include a turtle.
 
 We implemented the `Checkout` and `I like turtles` wild cards.
 
-GAME_NAME is a .... TODO
+Cell Wars is a .... TODO
 
 ## Controls
 
@@ -32,7 +32,11 @@ To setup the project locally, simply clone the repository and open the project i
 - [Dischead](https://cx10.itch.io/dischead)
 
 ## Asset References
-TODO: Finish
+- **Letter Flow**. Font. Licence: Free for personal use. Retrieved from: https://www.dafont.com/papernotes.font
+- **szegvari**. Action music. Licence: Creative Commons 0. Retrieved from: https://freesound.org/people/szegvari/sounds/608882/
+- **wobesound**. Click SFX. Licence: Creative Commons 0. Retrieved from: https://freesound.org/people/wobesound/sounds/488381/
+- **Raclure**. Damage SFX. Licence: Creative Commons 0. Retrieved from: https://freesound.org/people/Raclure/sounds/458867/
+- **gamer500**. Death SFX. Licence: Creative Commons 0. Retrieved from: https://freesound.org/people/gamer500/sounds/692084/
 
 ## Code References
 - **Soma Animus**. Global audio player. Retrieved from: https://www.youtube.com/watch?v=lILnUD3xph8

@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://u76hq8urkae8"]
+
+[ext_resource type="Script" uid="uid://bhch7lmgb2u7i" path="res://scenes/managers/music_manager/music_manager.gd" id="1_cyuw6"]
+
+[node name="MusicManager" type="Node2D" unique_id=1601518973]
+script = ExtResource("1_cyuw6")
+
+[node name="MusicPlayer" type="AudioStreamPlayer2D" parent="." unique_id=1840475471]
+
+[connection signal="finished" from="MusicPlayer" to="." method="_on_music_player_finished"]

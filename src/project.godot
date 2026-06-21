@@ -14,6 +14,11 @@ config/name="godot-wild-jam-94"
 run/main_scene="uid://dixdsuitng1mr"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 
+[autoload]
+
+MusicManager="*uid://u76hq8urkae8"
+SoundManager="*uid://dkqkgnufn8by5"
+
 [display]
 
 window/size/viewport_width=1280

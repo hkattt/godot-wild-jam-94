@@ -8,6 +8,7 @@ func _ready() -> void:
 	game_arena.game_over.connect(_on_game_over)
 	game_arena.wave_complete.connect(_on_wave_complete)
 	upgrade_menu.close_menu.connect(_on_close_menu)
+	MusicManager.play_music(Enums.Music.ACTION, -10.0)
 
 func _on_wave_complete() -> void:
 	upgrade_menu.open()
@@ -16,6 +17,7 @@ func _on_close_menu(_upgrade: Enums.Upgrade) -> void:
 	game_arena.start()
 
 func _on_start_pressed() -> void:
+	SoundManager.play_sound(Enums.Sound.CLICK, 5.0)
 	centre_panel.hide()
 	game_arena.start()
 
