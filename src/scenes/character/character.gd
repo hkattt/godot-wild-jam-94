@@ -48,13 +48,17 @@ func _on_hit_box_damage_taken(damage_source: Enums.DamageSource) -> void:
 	match damage_source:
 		Enums.DamageSource.VIRUS_1:
 			health.take_damage(10)
+			flash_animation()
 		Enums.DamageSource.VIRUS_2:
-			health.take_damage(15)
+			health.take_damage(5)
+			flash_animation()
 		Enums.DamageSource.VIRUS_3:
-			health.take_damage(20)
+			health.take_damage(15)
+			flash_animation()
 		Enums.DamageSource.VIRUS_4:
-			health.take_damage(30)
-	flash_animation()
+			health.take_damage(25)
+			flash_animation()
+	
 
 func shoot_animation() -> void:
 	if animated_sprite:
