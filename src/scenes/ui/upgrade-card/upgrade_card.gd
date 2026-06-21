@@ -56,4 +56,5 @@ func set_upgrade(p_upgrade: Enums.Upgrade) -> void:
 	icon.texture = UPGRADE_ICON_MAP[upgrade]	
 
 func _on_texture_button_pressed() -> void:
+	SoundManager.play_sound(Enums.Sound.CLICK, 5.0)
 	selected.emit(upgrade)

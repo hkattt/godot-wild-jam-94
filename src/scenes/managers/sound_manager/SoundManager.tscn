@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dkqkgnufn8by5"]
+
+[ext_resource type="Script" uid="uid://cbb36g2ogvjhb" path="res://scenes/managers/sound_manager/sound_manager.gd" id="1_bomfl"]
+
+[node name="SoundManager" type="Node2D" unique_id=973069175]
+script = ExtResource("1_bomfl")
+
+[node name="SoundPlayer" type="AudioStreamPlayer2D" parent="." unique_id=127876188]
+
+[connection signal="finished" from="SoundPlayer" to="." method="_on_sound_player_finished"]

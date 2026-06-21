@@ -29,6 +29,8 @@ func _on_hit_box_damage_taken(damage_source: Enums.DamageSource) -> void:
 	if target_index != -1:
 		mutations.remove_at(target_index)
 		mutations_balls.remove_mutation(target_mutation)
+	
+	SoundManager.play_sound(Enums.Sound.DAMAGE, -2.0)
 
 func _on_health_health_depleted() -> void:
 	died.emit()

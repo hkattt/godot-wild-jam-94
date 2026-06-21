@@ -41,3 +41,13 @@ enum Upgrade {
 	GUN_BURST,
 	GUN_FIRE_RATE
 }
+
+enum Music {
+	ACTION
+}
+
+enum Sound {
+	CLICK,
+	DAMAGE,
+	DEATH
+}
