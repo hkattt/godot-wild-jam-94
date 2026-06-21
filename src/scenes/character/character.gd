@@ -50,3 +50,12 @@ func _on_hit_box_damage_taken(damage_source: Enums.DamageSource) -> void:
 			health.take_damage(10)
 		Enums.DamageSource.VIRUS_4:
 			health.take_damage(12.5)
+
+func shoot_animation() -> void:
+	if animated_sprite:
+		animated_sprite.play("shoot")
+
+func _on_animated_sprite_2d_animation_finished() -> void:
+	if animated_sprite.animation == "shoot":
+		print("here")
+		animated_sprite.play("default")

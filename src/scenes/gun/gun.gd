@@ -47,10 +47,15 @@ func create_bullet(memory_cell: Enums.MemoryCell, bullet_position: Vector2, dire
 	
 func fire(memory_cell: Enums.MemoryCell, pattern: Enums.BulletPattern) -> void:
 	var direction: Vector2 = (get_global_mouse_position() - global_position).normalized()
+	
+	var character := get_parent() as Character
+	if character.animated_sprite:
+		character.animated_sprite.play("shoot")
+	
 	match pattern:
 		Enums.BulletPattern.SINGLE:
 			var bullet: Bullet = create_bullet(memory_cell, global_position, direction)
-			get_tree().current_scene.add_child.call_deferred(bullet)
+			get_tree().current_scene.add_child.call_deferred(bullet)			
 
 		Enums.BulletPattern.BURST:
 			var delay: float = 0.1
