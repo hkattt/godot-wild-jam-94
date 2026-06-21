@@ -40,7 +40,7 @@ position = Vector2(335, 361)
 texture = SubResource("CompressedTexture2D_3dy58")
 
 [node name="Character" parent="." unique_id=1331352431 instance=ExtResource("1_vr16s")]
-position = Vector2(353, 245)
+position = Vector2(330, 450)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1016527832]
 navigation_polygon = SubResource("NavigationPolygon_vr16s")

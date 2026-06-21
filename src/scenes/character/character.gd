@@ -11,7 +11,7 @@ var direction: Vector2 = Vector2.ZERO
 func _ready() -> void:
 	animated_sprite.play("default")
 	
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	direction = Vector2(
 		int(Input.is_action_pressed("move_right")) - int(Input.is_action_pressed("move_left")), 
 		int(Input.is_action_pressed("move_down")) - int(Input.is_action_pressed("move_up"))

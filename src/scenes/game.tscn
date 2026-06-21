@@ -6,7 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://dqimpym3tnjpn" path="res://scenes/ui/mem_card/mem_card.tscn" id="4_iywne"]
 [ext_resource type="PackedScene" uid="uid://b2pb0ls63rwgx" path="res://scenes/managers/upgrade_manager/UpgradeManager.tscn" id="4_u5sy4"]
 [ext_resource type="PackedScene" uid="uid://dqigngtfxc7dd" path="res://scenes/ui/stat_card/StatCard.tscn" id="5_iywne"]
+[ext_resource type="Texture2D" uid="uid://b3ltcsb4kkwl5" path="res://assets/images/ui/game-title/game-title-1.png" id="6_gee14"]
 [ext_resource type="PackedScene" uid="uid://pstott5nt1ra" path="res://scenes/ui/upgrade-menu/upgrade_menu.tscn" id="6_p57ef"]
+[ext_resource type="Texture2D" uid="uid://dqgwo6kdvo36p" path="res://assets/images/ui/instructions/wasd.png" id="7_0tnpc"]
+[ext_resource type="Texture2D" uid="uid://simkcllxewb1" path="res://assets/images/ui/instructions/mouse.png" id="8_vtaks"]
 
 [node name="Game" type="Node" unique_id=1717956550]
 script = ExtResource("1_uwrxv")
@@ -16,13 +19,14 @@ position = Vector2(640, 360)
 texture = ExtResource("3_lnu2h")
 
 [node name="GameArena" parent="." unique_id=496630411 instance=ExtResource("2_yqjtg")]
-position = Vector2(320, 0)
+position = Vector2(305, 0)
 
 [node name="UpgradeManager" parent="." unique_id=1463412954 node_paths=PackedStringArray("game_arena", "upgrade_menu") instance=ExtResource("4_u5sy4")]
 game_arena = NodePath("../GameArena")
 upgrade_menu = NodePath("../UpgradeMenu")
 
 [node name="GameUI" type="Control" parent="." unique_id=188450023]
+z_index = 100
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -68,13 +72,55 @@ theme_override_constants/margin_bottom = 12
 
 [node name="VBoxContainer" type="VBoxContainer" parent="GameUI/HBoxContainer/CentrePanel" unique_id=1455294964]
 layout_mode = 2
-size_flags_vertical = 4
+theme_override_constants/separation = 180
 
-[node name="Title" type="Label" parent="GameUI/HBoxContainer/CentrePanel/VBoxContainer" unique_id=376172792]
+[node name="Title" type="TextureRect" parent="GameUI/HBoxContainer/CentrePanel/VBoxContainer" unique_id=1500660426]
 layout_mode = 2
-theme_override_font_sizes/font_size = 46
-text = "Game Title"
+texture = ExtResource("6_gee14")
+stretch_mode = 2
+
+[node name="Instructions" type="HBoxContainer" parent="GameUI/HBoxContainer/CentrePanel/VBoxContainer" unique_id=29862333]
+layout_mode = 2
+
+[node name="Keyboard" type="VBoxContainer" parent="GameUI/HBoxContainer/CentrePanel/VBoxContainer/Instructions" unique_id=611127020]
+layout_mode = 2
+
+[node name="Move" type="Label" parent="GameUI/HBoxContainer/CentrePanel/VBoxContainer/Instructions/Keyboard" unique_id=1483521824]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Move"
 horizontal_alignment = 1
+
+[node name="WASD" type="TextureRect" parent="GameUI/HBoxContainer/CentrePanel/VBoxContainer/Instructions/Keyboard" unique_id=86786395]
+custom_minimum_size = Vector2(135, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+texture = ExtResource("7_0tnpc")
+expand_mode = 2
+
+[node name="Start" type="Button" parent="GameUI/HBoxContainer/CentrePanel/VBoxContainer/Instructions" unique_id=473379257]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+text = "▶ Fight viruses"
+
+[node name="Mouse" type="VBoxContainer" parent="GameUI/HBoxContainer/CentrePanel/VBoxContainer/Instructions" unique_id=637965848]
+layout_mode = 2
+
+[node name="Switch" type="Label" parent="GameUI/HBoxContainer/CentrePanel/VBoxContainer/Instructions/Mouse" unique_id=2096560308]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Switch memory cells"
+horizontal_alignment = 1
+
+[node name="Mouse" type="TextureRect" parent="GameUI/HBoxContainer/CentrePanel/VBoxContainer/Instructions/Mouse" unique_id=1638298349]
+custom_minimum_size = Vector2(65, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("8_vtaks")
+expand_mode = 2
 
 [node name="RightPanel" type="MarginContainer" parent="GameUI/HBoxContainer" unique_id=466175453]
 custom_minimum_size = Vector2(305, 0)
@@ -95,3 +141,5 @@ game_arena = NodePath("../../../../../GameArena")
 [node name="UpgradeMenu" parent="." unique_id=691965507 node_paths=PackedStringArray("upgrade_manager") instance=ExtResource("6_p57ef")]
 visible = false
 upgrade_manager = NodePath("../UpgradeManager")
+
+[connection signal="pressed" from="GameUI/HBoxContainer/CentrePanel/VBoxContainer/Instructions/Start" to="." method="_on_start_pressed"]
