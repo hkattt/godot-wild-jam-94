@@ -2,11 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://6c8cgv6sf860" path="res://scenes/character/character.tscn" id="1_vr16s"]
 [ext_resource type="Script" uid="uid://7eh6lnbyjel8" path="res://scenes/game_arena/game_arena.gd" id="1_y284u"]
+[ext_resource type="Texture2D" uid="uid://bf5g08iairtr7" path="res://assets/images/ui/background/game-arena.png" id="2_sm0m1"]
 [ext_resource type="PackedScene" uid="uid://bpvhuxpf1crr8" path="res://scenes/managers/wave_manager/wave_manager.tscn" id="3_h8ngd"]
 [ext_resource type="PackedScene" uid="uid://bjbt6nc6wv8ca" path="res://scenes/spawner/spawner.tscn" id="4_3dy58"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3dy58"]
-load_path = "res://.godot/imported/game-arena.png-3465dd3028eea54a7e25ca4f9aa2d670.ctex"
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_vr16s"]
 vertices = PackedVector2Array(656, 710.97656, 10, 710.0078, 10, 10, 656, 10)
@@ -37,7 +35,7 @@ script = ExtResource("1_y284u")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1627111680]
 position = Vector2(335, 361)
-texture = SubResource("CompressedTexture2D_3dy58")
+texture = ExtResource("2_sm0m1")
 
 [node name="Character" parent="." unique_id=1331352431 instance=ExtResource("1_vr16s")]
 position = Vector2(330, 550)
