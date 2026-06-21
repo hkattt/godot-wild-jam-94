@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://ygaavj7d1y0e"]
+
+[ext_resource type="Script" uid="uid://d4hbs0pw8wraf" path="res://scenes/bullets/rectangle/rectangle_bullet.gd" id="1_ywumb"]
+[ext_resource type="PackedScene" uid="uid://cipsggrpvr0qo" path="res://scenes/components/hurt_box/hurt_box.tscn" id="2_55ddh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ms86t"]
+size = Vector2(7, 7)
+
+[node name="Rectangle Bullet" type="Area2D" unique_id=479000517]
+script = ExtResource("1_ywumb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=808318678]
+shape = SubResource("RectangleShape2D_ms86t")
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=1814507211]
+color = Color(0.15915623, 0.667342, 0.17123055, 1)
+polygon = PackedVector2Array(-3.5, -3.5, -3.5, 3.5, 3.5, 3.5, 3.5, -3.5)
+
+[node name="HurtBox" parent="." unique_id=1840764264 instance=ExtResource("2_55ddh")]
+box_size = Vector2(7, 7)

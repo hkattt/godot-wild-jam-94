@@ -1,6 +1,8 @@
 class_name Gun extends Node2D
 
-var memory_cells: Array[Enums.MemoryCell] = [Enums.MemoryCell.WHITE]
+signal memory_cells_changed(memory_cells: Array[Enums.MemoryCell])
+
+var memory_cells: Array[Enums.MemoryCell] = [Enums.MemoryCell.TRIANGLE]
 
 var current_memory_cell_idx := 0
 
@@ -27,15 +29,18 @@ func get_memory_cells() -> Array[Enums.MemoryCell]:
 	
 func add_memory_cell(memory_cell: Enums.MemoryCell) -> void:
 	memory_cells.append(memory_cell)
+	memory_cells_changed.emit(memory_cells)
 
 func create_bullet(memory_cell: Enums.MemoryCell, bullet_position: Vector2, direction: Vector2) -> Bullet:
 	match memory_cell:
-		Enums.MemoryCell.WHITE:
-			return WhiteBullet.create(bullet_position, direction)
-		Enums.MemoryCell.RED:
-			return RedBullet.create(bullet_position, direction)
-		Enums.MemoryCell.GREEN:
-			return GreenBullet.create(bullet_position, direction)
+		Enums.MemoryCell.TRIANGLE:
+			return TriangleBullet.create(bullet_position, direction)
+		Enums.MemoryCell.DIAMOND:
+			return DiamondBullet.create(bullet_position, direction)
+		Enums.MemoryCell.RECTANGLE:
+			return RectangleBullet.create(bullet_position, direction)
+		Enums.MemoryCell.STAR:
+			return StarBullet.create(bullet_position, direction)
 		_:
 			return
 	

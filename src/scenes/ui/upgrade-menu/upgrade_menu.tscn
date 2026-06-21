@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://pstott5nt1ra"]
+
+[ext_resource type="Script" uid="uid://cthyi5xqxlltt" path="res://scenes/ui/upgrade-menu/upgrade_menu.gd" id="1_6k2ha"]
+[ext_resource type="PackedScene" uid="uid://cil57g3auald0" path="res://scenes/ui/upgrade-card/upgrade_card.tscn" id="1_t6t1o"]
+
+[node name="UpgradeMenu" type="Control" unique_id=691965507]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6k2ha")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=775136503]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0, 0, 0, 0.78431374)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1477195294]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 60
+theme_override_constants/margin_top = 60
+theme_override_constants/margin_right = 60
+theme_override_constants/margin_bottom = 60
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=215033841]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1995150874]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Choose an upgrade"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1671591446]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 450
+
+[node name="UpgradeCardLeft" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1466755531 instance=ExtResource("1_t6t1o")]
+layout_mode = 2
+
+[node name="UpgradeCardCentre" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=744807189 instance=ExtResource("1_t6t1o")]
+layout_mode = 2
+
+[node name="UpgradeCardRight" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=415822082 instance=ExtResource("1_t6t1o")]
+layout_mode = 2
+
+[node name="Confirm" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1294246316]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Click to confirm"
+horizontal_alignment = 1

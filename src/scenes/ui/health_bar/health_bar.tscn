@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://lfkuhfcvykrv"]
 
-[ext_resource type="Texture2D" uid="uid://b3ggxk8t4vgmr" path="res://assets/ui/health_bar/healthbar-under.png" id="1_07cyp"]
+[ext_resource type="Texture2D" uid="uid://b3ggxk8t4vgmr" path="res://assets/images/ui/health_bar/healthbar-under.png" id="1_07cyp"]
 [ext_resource type="Script" uid="uid://r86qopqjdxhh" path="res://scenes/ui/health_bar/health_bar.gd" id="1_ruhgv"]
-[ext_resource type="Texture2D" uid="uid://bpprgs34hveeb" path="res://assets/ui/health_bar/healthbar-progress.png" id="2_v8cic"]
+[ext_resource type="Texture2D" uid="uid://bpprgs34hveeb" path="res://assets/images/ui/health_bar/healthbar-progress.png" id="2_v8cic"]
 
 [node name="HealthBar" type="TextureProgressBar" unique_id=1671427461]
 custom_minimum_size = Vector2(35, 10)

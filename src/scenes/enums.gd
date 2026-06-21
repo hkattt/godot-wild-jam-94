@@ -1,23 +1,26 @@
 class_name Enums extends RefCounted
 
 enum MemoryCell { 
-	WHITE, 
-	RED,
-	GREEN
+	TRIANGLE, 
+	DIAMOND,
+	RECTANGLE,
+	STAR
 }
 
 enum DamageSource {
-	BULLET_RED,
-	BULLET_WHITE,
+	BULLET_TRIANGLE,
+	BULLET_DIAMOND,
+	BULLET_RECTANGLE,
+	BULLET_STAR,
 	VIRUS_RED,
 	VIRUS_WHITE
 }
 
 enum Mutation {
-	WHITE,
-	RED,
-	BLUE,
-	GREEN
+	TRIANGLE,
+	DIAMOND,
+	RECTANGLE,
+	STAR
 }
 
 enum BulletPattern {

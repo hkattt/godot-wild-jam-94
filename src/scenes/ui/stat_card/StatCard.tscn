@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dqigngtfxc7dd"]
 
-[ext_resource type="Texture2D" uid="uid://cwpxhim2n4s7j" path="res://assets/ui/stat_card/stat-card.png" id="1_nsvv8"]
+[ext_resource type="Texture2D" uid="uid://cwpxhim2n4s7j" path="res://assets/images/ui/stat_card/stat-card.png" id="1_nsvv8"]
 [ext_resource type="Script" uid="uid://cnjk8cu6s2cn3" path="res://scenes/ui/stat_card/stat_card.gd" id="1_nvasv"]
 
 [node name="StatCard" type="Control" unique_id=2046510531]

@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://cil57g3auald0"]
+
+[ext_resource type="Texture2D" uid="uid://cp7n620lj0nbt" path="res://assets/images/ui/upgrade_card/upgrade-card.png" id="1_dvvti"]
+[ext_resource type="Texture2D" uid="uid://3jwjji1s6ywx" path="res://assets/images/ui/upgrade_card/upgrade-move-speed.png" id="2_4nc74"]
+[ext_resource type="Script" uid="uid://5g2hld1f1l6k" path="res://scenes/ui/upgrade-card/upgrade_card.gd" id="2_jp4y4"]
+[ext_resource type="Texture2D" uid="uid://5m65quy1e1qo" path="res://assets/images/ui/upgrade_card/upgrade-card-hover.png" id="3_a8aqt"]
+
+[node name="UpgradeCard" type="Control" unique_id=1466755531]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_jp4y4")
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=6655440]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("1_dvvti")
+texture_pressed = ExtResource("3_a8aqt")
+texture_hover = ExtResource("3_a8aqt")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=2082318847]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=570324258]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1492713226]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Title"
+
+[node name="Description" type="Label" parent="MarginContainer/VBoxContainer" unique_id=97993785]
+layout_mode = 2
+text = "This is a description"
+
+[node name="Icon" type="TextureRect" parent="MarginContainer/VBoxContainer" unique_id=1293809007]
+layout_mode = 2
+texture = ExtResource("2_4nc74")
+stretch_mode = 2
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

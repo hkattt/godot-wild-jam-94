@@ -1,10 +1,10 @@
 class_name MutationBalls extends Control
 
 const MUTATION_ICON_MAP: Dictionary = {
-	Enums.Mutation.WHITE: "res://assets/ui/mutations/circle-white.png",
-	Enums.Mutation.RED: "res://assets/ui/mutations/circle-red.png",
-	Enums.Mutation.GREEN: "res://assets/ui/mutations/circle-green.png",
-	Enums.Mutation.BLUE: "res://assets/ui/mutations/circle-blue.png",
+	Enums.Mutation.TRIANGLE: "res://assets/images/ui/mutations/circle-white.png",
+	Enums.Mutation.DIAMOND: "res://assets/images/ui/mutations/circle-red.png",
+	Enums.Mutation.RECTANGLE: "res://assets/images/ui/mutations/circle-green.png",
+	Enums.Mutation.STAR: "res://assets/images/ui/mutations/circle-blue.png",
 }
 
 var mutation_balls: Dictionary[Enums.Mutation, Array]

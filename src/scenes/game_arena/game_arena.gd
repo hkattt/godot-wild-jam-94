@@ -1,11 +1,12 @@
 class_name GameArena extends Node2D
 
+signal wave_complete
+
 @onready var character: Character = $Character
 @onready var wave_manager: WaveManager = $WaveManager
 
 func _ready() -> void:
 	wave_manager.end_wave.connect(_on_end_wave)
-	start()
 
 func start():
 	var gun: Gun = character.get_gun()
@@ -22,4 +23,4 @@ func get_current_wave() -> int:
 	return wave_manager.get_current_wave()
 
 func _on_end_wave() -> void:
-	start()
+	wave_complete.emit()

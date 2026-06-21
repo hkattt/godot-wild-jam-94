@@ -1,16 +1,22 @@
 [gd_scene format=3 uid="uid://dqimpym3tnjpn"]
 
-[ext_resource type="Texture2D" uid="uid://0nvpb2cohhwd" path="res://assets/ui/mem_card/mem-card-slot.png" id="1_6bpr1"]
-[ext_resource type="Texture2D" uid="uid://enhl2rwhu38i" path="res://assets/ui/mem_cells/mem-cell-triangle-locked.png" id="2_p0hsu"]
-[ext_resource type="Texture2D" uid="uid://dk3tnvsdkb7u7" path="res://assets/ui/mem_cells/mem-cell-diamond-locked.png" id="3_mma3t"]
-[ext_resource type="Texture2D" uid="uid://ifw5bevd210t" path="res://assets/ui/mem_cells/mem-cell-rect-locked.png" id="4_fb2kb"]
-[ext_resource type="Texture2D" uid="uid://deptq0lj1axoa" path="res://assets/ui/mem_cells/mem-cell-star-locked.png" id="5_gtypp"]
+[ext_resource type="Texture2D" uid="uid://0nvpb2cohhwd" path="res://assets/images/ui/mem_card/mem-card-slot.png" id="1_6bpr1"]
+[ext_resource type="Script" uid="uid://ck31lcestu82t" path="res://scenes/ui/mem_card/mem_card.gd" id="1_f60f6"]
+[ext_resource type="Texture2D" uid="uid://enhl2rwhu38i" path="res://assets/images/ui/mem_cells/mem-cell-triangle-locked.png" id="2_p0hsu"]
+[ext_resource type="Texture2D" uid="uid://h84x2r7i4hrd" path="res://assets/images/ui/mem_cells/mem-cell-triangle-1.png" id="3_gtypp"]
+[ext_resource type="Texture2D" uid="uid://dk3tnvsdkb7u7" path="res://assets/images/ui/mem_cells/mem-cell-diamond-locked.png" id="3_mma3t"]
+[ext_resource type="Texture2D" uid="uid://ifw5bevd210t" path="res://assets/images/ui/mem_cells/mem-cell-rect-locked.png" id="4_fb2kb"]
+[ext_resource type="Texture2D" uid="uid://deptq0lj1axoa" path="res://assets/images/ui/mem_cells/mem-cell-star-locked.png" id="5_gtypp"]
+[ext_resource type="Texture2D" uid="uid://b6am4l4e6wnqu" path="res://assets/images/ui/mem_cells/mem-cell-diamond-1.png" id="5_i77i4"]
+[ext_resource type="Texture2D" uid="uid://25aa15h3upi7" path="res://assets/images/ui/mem_cells/mem-cell-rect-1.png" id="7_fngl6"]
+[ext_resource type="Texture2D" uid="uid://cl41u7xy6hys5" path="res://assets/images/ui/mem_cells/mem-cell-star-1.png" id="9_f60f6"]
 
 [node name="MemCard" type="Control" unique_id=194550809]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 275.0
 offset_bottom = 275.0
+script = ExtResource("1_f60f6")
 
 [node name="Background" type="TextureRect" parent="." unique_id=507582790]
 layout_mode = 1
@@ -25,36 +31,85 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 12
+theme_override_constants/margin_left = 32
 theme_override_constants/margin_top = 60
-theme_override_constants/margin_right = 12
+theme_override_constants/margin_right = 32
 theme_override_constants/margin_bottom = 12
 
 [node name="Content" type="VBoxContainer" parent="MarginContainer" unique_id=510419482]
 layout_mode = 2
-size_flags_horizontal = 4
 theme_override_constants/separation = 25
 
 [node name="TopRow" type="HBoxContainer" parent="MarginContainer/Content" unique_id=855308777]
 layout_mode = 2
+size_flags_vertical = 3
 theme_override_constants/separation = 35
 
-[node name="TriangleLocked" type="TextureRect" parent="MarginContainer/Content/TopRow" unique_id=846555701]
+[node name="Triangle" type="Control" parent="MarginContainer/Content/TopRow" unique_id=1647786706]
 layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TriangleLocked" type="TextureRect" parent="MarginContainer/Content/TopRow/Triangle" unique_id=846555701]
+layout_mode = 0
+offset_right = 80.0
+offset_bottom = 80.0
 texture = ExtResource("2_p0hsu")
 
-[node name="DiamondLocked" type="TextureRect" parent="MarginContainer/Content/TopRow" unique_id=1078310892]
+[node name="Triangle" type="TextureRect" parent="MarginContainer/Content/TopRow/Triangle" unique_id=240820580]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_gtypp")
+
+[node name="Diamond" type="Control" parent="MarginContainer/Content/TopRow" unique_id=1381915530]
 layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="DiamondLocked" type="TextureRect" parent="MarginContainer/Content/TopRow/Diamond" unique_id=1078310892]
+layout_mode = 0
+offset_right = 80.0
+offset_bottom = 80.0
 texture = ExtResource("3_mma3t")
+
+[node name="Diamond" type="TextureRect" parent="MarginContainer/Content/TopRow/Diamond" unique_id=319189142]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("5_i77i4")
 
 [node name="BottomRow" type="HBoxContainer" parent="MarginContainer/Content" unique_id=771735639]
 layout_mode = 2
+size_flags_vertical = 3
 theme_override_constants/separation = 35
 
-[node name="RectangleLocked" type="TextureRect" parent="MarginContainer/Content/BottomRow" unique_id=1605602808]
+[node name="Rectangle" type="Control" parent="MarginContainer/Content/BottomRow" unique_id=1357000232]
 layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RectangleLocked" type="TextureRect" parent="MarginContainer/Content/BottomRow/Rectangle" unique_id=1605602808]
+layout_mode = 0
+offset_right = 80.0
+offset_bottom = 89.0
 texture = ExtResource("4_fb2kb")
 
-[node name="StarLocked" type="TextureRect" parent="MarginContainer/Content/BottomRow" unique_id=1500289235]
+[node name="Rectangle" type="TextureRect" parent="MarginContainer/Content/BottomRow/Rectangle" unique_id=996520858]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("7_fngl6")
+
+[node name="Star" type="Control" parent="MarginContainer/Content/BottomRow" unique_id=590663405]
 layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="StarLocked" type="TextureRect" parent="MarginContainer/Content/BottomRow/Star" unique_id=1500289235]
+layout_mode = 0
+offset_right = 80.0
+offset_bottom = 89.0
 texture = ExtResource("5_gtypp")
+
+[node name="Star" type="TextureRect" parent="MarginContainer/Content/BottomRow/Star" unique_id=1957385591]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("9_f60f6")

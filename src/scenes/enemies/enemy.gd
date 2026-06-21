@@ -22,6 +22,7 @@ func _on_hit_box_damage_taken(damage_source: Enums.DamageSource) -> void:
 	
 	var target_mutation: Enums.Mutation = Maps.DAMAGE_MUTATION_MAP[damage_source]
 	var target_index: int = mutations.find(target_mutation)
+
 	if target_index != -1:
 		mutations.remove_at(target_index)
 		mutations_balls.remove_mutation(target_mutation)

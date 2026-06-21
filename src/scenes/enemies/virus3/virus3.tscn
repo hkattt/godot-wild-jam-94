@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://bjvp17meh43lh" path="res://scenes/enemies/virus3/virus3.gd" id="1_jgjef"]
 [ext_resource type="PackedScene" uid="uid://d31ynkkcmyoof" path="res://scenes/ui/mutation_balls/mutation_balls.tscn" id="2_8w62e"]
 [ext_resource type="PackedScene" uid="uid://lfkuhfcvykrv" path="res://scenes/ui/health_bar/health_bar.tscn" id="3_i0lvt"]
-[ext_resource type="Texture2D" uid="uid://dn3rp00c8ff48" path="res://assets/viruses/virus-3-1.png" id="4_jgjef"]
-[ext_resource type="Texture2D" uid="uid://bnci7fo7clnik" path="res://assets/viruses/virus-3-2.png" id="5_k0dyt"]
+[ext_resource type="Texture2D" uid="uid://dn3rp00c8ff48" path="res://assets/images/viruses/virus-3-1.png" id="4_jgjef"]
+[ext_resource type="Texture2D" uid="uid://bnci7fo7clnik" path="res://assets/images/viruses/virus-3-2.png" id="5_k0dyt"]
 [ext_resource type="PackedScene" uid="uid://o63rvg4a6cnn" path="res://scenes/components/health/health.tscn" id="6_yljc2"]
 [ext_resource type="PackedScene" uid="uid://bad8vdun64cjm" path="res://scenes/components/hit_box/hit_box.tscn" id="7_utx0x"]
 
