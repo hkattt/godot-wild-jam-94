@@ -142,7 +142,4 @@ game_arena = NodePath("../../../../../GameArena")
 visible = false
 upgrade_manager = NodePath("../UpgradeManager")
 
-[node name="Health" type="Label" parent="." unique_id=1038536862]
-text = "Health"
-
 [connection signal="pressed" from="GameUI/HBoxContainer/CentrePanel/VBoxContainer/Instructions/Start" to="." method="_on_start_pressed"]

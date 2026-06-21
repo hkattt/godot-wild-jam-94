@@ -2,7 +2,7 @@ class_name Virus2 extends Enemy
 
 const virus2_scene: PackedScene = preload("res://scenes/enemies/virus2/virus2.tscn")
 
-const MAX_SPEED: float = 50
+const MAX_SPEED: float = 90
 
 static func create(p_target: Node2D, p_position: Vector2, p_mutations: Array[Enums.Mutation]) -> Virus2:
 	var virus2: Virus2 = virus2_scene.instantiate()

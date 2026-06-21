@@ -56,7 +56,7 @@ sprite_frames = SubResource("SpriteFrames_oj5dg")
 shape = SubResource("RectangleShape2D_vwim3")
 
 [node name="Health" parent="." unique_id=1988655922 instance=ExtResource("6_y2v7j")]
-health = 100.0
+health = 500.0
 
 [node name="HitBox" parent="." unique_id=792065303 instance=ExtResource("7_ld6t1")]
 box_size = Vector2(80, 70)
