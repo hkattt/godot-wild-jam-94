@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bnci7fo7clnik" path="res://assets/images/viruses/virus-3-2.png" id="5_k0dyt"]
 [ext_resource type="PackedScene" uid="uid://o63rvg4a6cnn" path="res://scenes/components/health/health.tscn" id="6_yljc2"]
 [ext_resource type="PackedScene" uid="uid://bad8vdun64cjm" path="res://scenes/components/hit_box/hit_box.tscn" id="7_utx0x"]
+[ext_resource type="PackedScene" uid="uid://cipsggrpvr0qo" path="res://scenes/components/hurt_box/hurt_box.tscn" id="8_k0dyt"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0rvx5"]
 animations = [{
@@ -34,9 +35,9 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -17.5
+offset_left = -40.0
 offset_top = -90.0
-offset_right = 17.5
+offset_right = 40.0
 offset_bottom = -66.0
 grow_horizontal = 2
 grow_vertical = 0
@@ -59,3 +60,7 @@ health = 100.0
 
 [node name="HitBox" parent="." unique_id=792065303 instance=ExtResource("7_utx0x")]
 box_size = Vector2(80, 70)
+
+[node name="HurtBox" parent="." unique_id=1840764264 instance=ExtResource("8_k0dyt")]
+box_size = Vector2(90, 80)
+damage_source = 6

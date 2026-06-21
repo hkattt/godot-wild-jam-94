@@ -1,6 +1,6 @@
 class_name HitBox extends Area2D
 
-signal damage_taken(damage_source)
+signal damage_taken(damage_source: Enums.DamageSource)
 
 @export var box_size: Vector2
 

@@ -12,8 +12,10 @@ enum DamageSource {
 	BULLET_DIAMOND,
 	BULLET_RECTANGLE,
 	BULLET_STAR,
-	VIRUS_RED,
-	VIRUS_WHITE
+	VIRUS_1,
+	VIRUS_2,
+	VIRUS_3,
+	VIRUS_4
 }
 
 enum Mutation {

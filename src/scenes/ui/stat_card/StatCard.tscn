@@ -4,12 +4,9 @@
 [ext_resource type="Script" uid="uid://cnjk8cu6s2cn3" path="res://scenes/ui/stat_card/stat_card.gd" id="1_nvasv"]
 
 [node name="StatCard" type="Control" unique_id=2046510531]
+custom_minimum_size = Vector2(260, 360)
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
 script = ExtResource("1_nvasv")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=793702390]
@@ -18,22 +15,33 @@ offset_right = 279.0
 offset_bottom = 388.0
 texture = ExtResource("1_nsvv8")
 
-[node name="Content" type="MarginContainer" parent="." unique_id=1672817495]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-theme_override_constants/margin_left = 24
-theme_override_constants/margin_top = 60
-theme_override_constants/margin_right = 24
+[node name="Content" type="MarginContainer" parent="." unique_id=196418443]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 70
+theme_override_constants/margin_right = 12
 theme_override_constants/margin_bottom = 12
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Content" unique_id=1462635771]
 layout_mode = 2
 
-[node name="FPS" type="Label" parent="Content/VBoxContainer" unique_id=1423031433]
+[node name="Health" type="Label" parent="Content/VBoxContainer" unique_id=1943483036]
 layout_mode = 2
-text = "FPS:"
+text = "Health"
+
+[node name="Move Speed" type="Label" parent="Content/VBoxContainer" unique_id=1576372433]
+layout_mode = 2
+text = "Move Speed"
 
 [node name="CurrentWave" type="Label" parent="Content/VBoxContainer" unique_id=1356138446]
 layout_mode = 2
 text = "Current Wave:"
+
+[node name="FPS" type="Label" parent="Content/VBoxContainer" unique_id=1423031433]
+layout_mode = 2
+text = "FPS:"

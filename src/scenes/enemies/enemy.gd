@@ -17,6 +17,9 @@ func _ready() -> void:
 	animated_sprite.play("default")
 
 func _on_hit_box_damage_taken(damage_source: Enums.DamageSource) -> void:
+	if damage_source == Enums.DamageSource.VIRUS_1 or damage_source == Enums.DamageSource.VIRUS_2 or damage_source == Enums.DamageSource.VIRUS_3 or damage_source == Enums.DamageSource.VIRUS_4:
+		return
+	
 	if mutations.size() == 0:
 		health.take_damage(50)
 	

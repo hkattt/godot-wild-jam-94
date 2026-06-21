@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://t75q1qfs13ta" path="res://scenes/components/hurt_box/hurt_box.gd" id="1_8i2d1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p0xit"]
+resource_local_to_scene = true
 size = Vector2(1, 1)
 
 [node name="HurtBox" type="Area2D" unique_id=1840764264 groups=["hurt_boxes"]]

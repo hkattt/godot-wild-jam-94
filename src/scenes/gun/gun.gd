@@ -32,15 +32,16 @@ func set_spray_pattern(new_spray_pattern: Enums.BulletPattern):
 	spray_patten = new_spray_pattern
 
 func create_bullet(memory_cell: Enums.MemoryCell, bullet_position: Vector2, direction: Vector2) -> Bullet:
+	var spawn_position: Vector2 = bullet_position + 50 * direction
 	match memory_cell:
 		Enums.MemoryCell.TRIANGLE:
-			return TriangleBullet.create(bullet_position, direction)
+			return TriangleBullet.create(spawn_position, direction)
 		Enums.MemoryCell.DIAMOND:
-			return DiamondBullet.create(bullet_position, direction)
+			return DiamondBullet.create(spawn_position, direction)
 		Enums.MemoryCell.RECTANGLE:
-			return RectangleBullet.create(bullet_position, direction)
+			return RectangleBullet.create(spawn_position, direction)
 		Enums.MemoryCell.STAR:
-			return StarBullet.create(bullet_position, direction)
+			return StarBullet.create(spawn_position, direction)
 		_:
 			return
 	

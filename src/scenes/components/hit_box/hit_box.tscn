@@ -3,10 +3,11 @@
 [ext_resource type="Script" uid="uid://11f0id2of65k" path="res://scenes/components/hit_box/hit_box.gd" id="1_es7uq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p0xit"]
+resource_local_to_scene = true
 size = Vector2(1, 1)
 
 [node name="HitBox" type="Area2D" unique_id=792065303]
 script = ExtResource("1_es7uq")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1156464052]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1156464052 groups=["hit_boxes"]]
 shape = SubResource("RectangleShape2D_p0xit")
