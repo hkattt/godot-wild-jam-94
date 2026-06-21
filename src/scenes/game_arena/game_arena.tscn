@@ -13,6 +13,22 @@ vertices = PackedVector2Array(656, 710.97656, 10, 710.0078, 10, 10, 656, 10)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(0, 0, 0, 720, 666, 721, 666, 0)])
 
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_3dy58"]
+a = Vector2(17, 1)
+b = Vector2(14, 720)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_sm0m1"]
+a = Vector2(14, 1)
+b = Vector2(656, 2)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_so6s1"]
+a = Vector2(668, 1)
+b = Vector2(667, 719)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_bu12v"]
+a = Vector2(656, 719)
+b = Vector2(12, 720)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y284u"]
 size = Vector2(644, 719)
 
@@ -34,20 +50,35 @@ target = NodePath("../Character")
 spawners = [NodePath("../SpawnerTopLeft"), NodePath("../SpawnerTopRight"), NodePath("../SpawnerBottomRight"), NodePath("../SpawnerBottomLeft")]
 
 [node name="SpawnerTopLeft" parent="." unique_id=2100653988 node_paths=PackedStringArray("wave_manager") instance=ExtResource("4_3dy58")]
-position = Vector2(25, 25)
+position = Vector2(50, 50)
 wave_manager = NodePath("../WaveManager")
 
 [node name="SpawnerTopRight" parent="." unique_id=1356849525 node_paths=PackedStringArray("wave_manager") instance=ExtResource("4_3dy58")]
-position = Vector2(615, 25)
+position = Vector2(595, 50)
 wave_manager = NodePath("../WaveManager")
 
 [node name="SpawnerBottomRight" parent="." unique_id=551141241 node_paths=PackedStringArray("wave_manager") instance=ExtResource("4_3dy58")]
-position = Vector2(615, 695)
+position = Vector2(595, 675)
 wave_manager = NodePath("../WaveManager")
 
 [node name="SpawnerBottomLeft" parent="." unique_id=1928636138 node_paths=PackedStringArray("wave_manager") instance=ExtResource("4_3dy58")]
-position = Vector2(25, 695)
+position = Vector2(50, 675)
 wave_manager = NodePath("../WaveManager")
+
+[node name="Walls" type="StaticBody2D" parent="." unique_id=1775530819]
+
+[node name="LeftWall" type="CollisionShape2D" parent="Walls" unique_id=2023229394]
+shape = SubResource("SegmentShape2D_3dy58")
+
+[node name="TopWall" type="CollisionShape2D" parent="Walls" unique_id=37154886]
+shape = SubResource("SegmentShape2D_sm0m1")
+
+[node name="RightWall" type="CollisionShape2D" parent="Walls" unique_id=647052158]
+position = Vector2(-11, 1)
+shape = SubResource("SegmentShape2D_so6s1")
+
+[node name="BottomWall" type="CollisionShape2D" parent="Walls" unique_id=1823137734]
+shape = SubResource("SegmentShape2D_bu12v")
 
 [node name="Game Boundary" type="Area2D" parent="." unique_id=1303804936 groups=["game_boundary"]]
 
