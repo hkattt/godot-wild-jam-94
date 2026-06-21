@@ -21,12 +21,34 @@ func generate_upgrade_options() -> Array[Enums.Upgrade]:
 	var options: Array = Enums.Upgrade.values()
 	
 	for i in range(3):
-		var random_index = randi_range(0, options.size() - 1)
-		upgrades.append(options[random_index])
-		options.pop_at(random_index)
+		var upgrade_index = generate_upgrade_option(options)
+		var upgrade = options.pop_at(upgrade_index)
+		upgrades.append(upgrade)
 	
 	return upgrades
+
+func generate_upgrade_option(options: Array) -> int:
+	var random_index = randi_range(0, options.size() - 1)
+	var upgrade: Enums.Upgrade = options[random_index]
 	
+	var memory_cells = gun.get_memory_cells()
+	
+	match upgrade:
+		Enums.Upgrade.MEMORY_CELL_RECTANGLE:
+			if Enums.MemoryCell.RECTANGLE in memory_cells:
+				return generate_upgrade_option(options)
+		Enums.Upgrade.MEMORY_CELL_DIAMOND:
+			if Enums.MemoryCell.DIAMOND in memory_cells:
+				return generate_upgrade_option(options)	
+		Enums.Upgrade.MEMORY_CELL_STAR:
+			if Enums.MemoryCell.STAR in memory_cells:
+				return generate_upgrade_option(options)	
+		Enums.Upgrade.GUN_BURST:
+			if gun.spray_patten == Enums.BulletPattern.BURST:
+				return generate_upgrade_option(options)	
+		
+	return random_index
+		
 func _on_close_menu(upgrade: Enums.Upgrade) -> void:
 	match upgrade:
 		Enums.Upgrade.CHARACTER_HEAL:

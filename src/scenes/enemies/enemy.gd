@@ -22,6 +22,7 @@ func _on_hit_box_damage_taken(damage_source: Enums.DamageSource) -> void:
 	
 	if mutations.size() == 0:
 		health.take_damage(50)
+		SoundManager.play_sound(Enums.Sound.DAMAGE, -3.0)
 	
 	var target_mutation: Enums.Mutation = Maps.DAMAGE_MUTATION_MAP[damage_source]
 	var target_index: int = mutations.find(target_mutation)
@@ -30,8 +31,6 @@ func _on_hit_box_damage_taken(damage_source: Enums.DamageSource) -> void:
 		mutations.remove_at(target_index)
 		mutations_balls.remove_mutation(target_mutation)
 	
-	SoundManager.play_sound(Enums.Sound.DAMAGE, -2.0)
-
 func _on_health_health_depleted() -> void:
 	died.emit()
 	queue_free()
