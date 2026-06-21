@@ -104,7 +104,7 @@ custom_minimum_size = Vector2(300, 50)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
-text = "▶ Fight viruses"
+text = "Fight viruses"
 
 [node name="Mouse" type="VBoxContainer" parent="GameUI/HBoxContainer/CentrePanel/VBoxContainer/Instructions" unique_id=637965848]
 layout_mode = 2
