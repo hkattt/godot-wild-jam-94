@@ -1,7 +1,7 @@
 # Godot Wild Jam 94
 
 ## Overview
-Cell Wars was made using Godot 4.6.3 and GDScript for the [Godot Wild Jam 94](https://itch.io/jam/godot-wild-jam-94). The theme of the game jam was was `MUTATION`. The game jame also included the  following wildcards:
+Cell Wars was made using Godot 4.7 (previously 4.6.3) and GDScript for the [Godot Wild Jam 94](https://itch.io/jam/godot-wild-jam-94). The theme of the game jam was was `MUTATION`. The game jame also included the  following wildcards:
 - `Disassembly required`: Demolish, break, or otherwise disassemble things.
 - `Checkout`: Have stuff to buy in your game.
 - `I like turtles`: Include a turtle.
